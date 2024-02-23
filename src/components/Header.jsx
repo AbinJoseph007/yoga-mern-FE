@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { isAuthTokenContext } from '../context/ContextShare';
 
-function Header() {
+function Header({Home,dashbord}) {
+
+  const {isAuthToken , setIsAuthToken} = useContext(isAuthTokenContext)
+  
+  const navigate = useNavigate()
+
+  const handleLogout = ()=>{
+    sessionStorage.removeItem("tokens")
+    sessionStorage.removeItem("exitstingteacher")
+    setIsAuthToken(false )
+   
+    navigate('/')
+  }
   return (
+
     <>
-     <Navbar expand="lg" className="bg-body-tertiary fixed">
+     <Navbar expand="lg" className="bg-primary fixed-top">
       <Container fluid>
         <Navbar.Brand href="/" className='ms-5 text-success' style={{fontSize:"35px"}}> YOGI</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -19,11 +33,10 @@ function Header() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">course</Nav.Link>
+             <Link to={'/'} className='ms-3 mt-2 me-2'style={{textDecoration:"none"}}>home</Link>
+            <Link to={'/profile'} className='ms-3 mt-2 me-2'style={{textDecoration:"none"}}>Trainers</Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">courses</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
+              <NavDropdown.Item Link to={'/cources'}>
                 Another action
               </NavDropdown.Item>
               <NavDropdown.Divider />
@@ -34,13 +47,17 @@ function Header() {
            
           </Nav>
           <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-             <Link to={'/login'} className='btn btn-success rounded'>login/register</Link>
+            
+             { Home&& 
+              <Link to={'/telogin'} className='btn btn-success rounded me-5'>Teacher's reg</Link>
+              }
+
+          {
+            dashbord &&
+            <button onClick={handleLogout} className='btn btn-success me-5'>logOut<i class="fa-solid fa-power-off ms-2"></i></button>
+          }
+
+             
 
           </Form>
         </Navbar.Collapse>

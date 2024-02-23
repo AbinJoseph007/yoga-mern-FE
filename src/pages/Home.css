@@ -1,0 +1,180 @@
+.hero {
+    position: relative;
+    width: 100%;
+    margin-bottom: 45px;
+    padding: 90px 0;
+    background: #d6e8ed;
+    overflow-x: hidden;
+}
+
+.hero .container-fluid {
+    padding: 0;
+}
+
+.hero .hero-image {
+    position: relative;
+    text-align: right;
+}
+
+.hero .hero-image img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.hero .hero-text {
+    position: relative;
+    padding-left: 75px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero .hero-text h1 {
+    color: #343148;
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero .hero-text p {
+    color: #343148;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero .hero-btn .btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #F7CAC9;
+    background: #343148;
+    border-radius: 0;
+    transition: .3s;
+}
+
+.hero .hero-btn .btn:hover {
+    color: #343148;
+    background: #ffffff;
+}
+
+.hero .hero-btn .btn:first-child {
+    margin-right: 10px;
+}
+
+@media (max-width: 991.98px) {
+    .hero .hero-text {
+        padding: 0 15px;
+    }
+    
+    .hero .hero-text h1 {
+        font-size: 35px;
+    }
+    
+    .hero .hero-text p {
+        font-size: 16px;
+    }
+    
+    .hero .hero-text .btn {
+        padding: 12px 30px;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero .hero-text h1 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+    
+    .hero .hero-text p {
+        font-size: 14px;
+    }
+    
+    .hero .hero-text .btn {
+        padding: 10px 15px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+	
+	.hero .hero-image {
+		text-align: left;
+		margin-top: 30px;
+	}
+	
+	.hero .hero-image img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+@media (max-width: 575.98px) {
+    .hero .hero-text h1 {
+        font-size: 25px;
+        font-weight: 600;
+    }
+    
+    .hero .hero-text p {
+        font-size: 14px;
+    }
+    
+    .hero .hero-text .btn {
+        padding: 8px 10px;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0;
+    }
+}
+
+.about {
+    position: relative;
+    width: 100%;
+    padding: 45px 0;
+}
+
+.about .section-header {
+    margin-bottom: 30px;
+    margin-left: 0;
+}
+
+.about .about-img {
+    position: relative;
+    height: 100%;
+}
+
+.about .about-img img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about .about-text p {
+    font-size: 16px;
+}
+
+.about .about-text a.btn {
+    position: relative;
+    margin-top: 15px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #F7CAC9;
+    background: #343148;
+    border-radius: 0;
+    transition: .3s;
+}
+
+.about .about-text a.btn:hover {
+    color: #343148;
+    background: #F7CAC9;
+}
+
+@media (max-width: 767.98px) {
+    .about .about-img {
+        margin-bottom: 30px;
+        height: auto;
+    }
+}
