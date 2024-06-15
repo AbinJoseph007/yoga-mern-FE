@@ -35,6 +35,8 @@ function Header({Home,dashbord}) {
           >
              <Link to={'/'} className='ms-3 mt-2 me-2'style={{textDecoration:"none"}}>home</Link>
             <Link to={'/profile'} className='ms-3 mt-2 me-2'style={{textDecoration:"none"}}>Trainers</Link>
+            <Link to={'/order'} className='ms-3 mt-2 me-2'style={{textDecoration:"none"}}>buy classes</Link>
+
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item Link to={'/cources'}>
                 Another action
@@ -56,8 +58,6 @@ function Header({Home,dashbord}) {
             dashbord &&
             <button onClick={handleLogout} className='btn btn-success me-5'>logOut<i class="fa-solid fa-power-off ms-2"></i></button>
           }
-
-             
 
           </Form>
         </Navbar.Collapse>

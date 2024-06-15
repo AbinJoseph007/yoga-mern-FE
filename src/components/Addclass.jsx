@@ -60,7 +60,7 @@ function Addclass() {
         else {
             setTokens("")
         }
-    }, [])
+    }, [])  
 
     console.log(preview);
 
@@ -142,7 +142,7 @@ function Addclass() {
                         </Col>
                         <Col md={6}> 
                             <div className='mb-3'>
-                                <input type="text" className='form-control' placeholder='class title' value={classdetails.className} onChange={(e) => setClassDetails({ ...classdetails, classname: e.target.value })} />
+                                <input type="text" className='form-control' placeholder='class title' value={classdetails.classname} onChange={(e) => setClassDetails({ ...classdetails, classname: e.target.value })} />
                             </div>
                             <div className='mb-3'>
                                 <input type="text" className='form-control' placeholder='class type' value={classdetails.classtype} onChange={(e) => setClassDetails({ ...classdetails, classtype: e.target.value })} />

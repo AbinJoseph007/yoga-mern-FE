@@ -5,7 +5,7 @@ import Teprofile from '../components/Teprofile'
 function Teacherptofile() {
   return (
     <>
-    <Teprofile/>
+    <div className='display-flex justify-content-center align-items-center flex-column '><Teprofile/></div>
     </>
   )
 }

@@ -2,8 +2,10 @@
     position: relative;
     width: 100%;
     padding: 45px 0 15px 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
 }
-
 
 .team .team-item {
     position: relative;
@@ -11,8 +13,7 @@
     padding: 15px;
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, .07);
-    display: flex; /* Added */
-    align-items: center; /* Added */
+    
 }
 
 .team .team-img {

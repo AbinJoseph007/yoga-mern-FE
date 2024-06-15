@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
+    
     <>
       <div className=" py-5" style={{backgroundColor:"black"}}>
         <div className="container">

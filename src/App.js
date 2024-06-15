@@ -8,6 +8,8 @@ import Teacherauth from './components/Teacherauth';
 import Dashbord from './pages/Dashbord';
 import { useContext } from 'react';
 import { isAuthTokenContext } from './context/ContextShare';
+import Oderclass from './pages/Oderclass';
+import Reviews from './pages/Reviews';
 
 function App() {
 
@@ -26,7 +28,9 @@ function App() {
 
         <Route path='/cources' element={<Cource/>}/>
         <Route path='/profile' element={<Teacherptofile/>}/>
+        <Route path='/order'   element={<Oderclass/>}/>
         <Route path='/dashbord' element={isAuthToken? <Dashbord/>:<Home/>}/>
+        <Route path='/review' element={<Reviews/>}/>
 
       </Routes>
      

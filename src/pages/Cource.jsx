@@ -4,6 +4,7 @@ import { Button, Card, Col, Row } from 'react-bootstrap'
 import { AllClassAPI } from '../services/allAPI'
 import { BASE_URL } from '../services/baseurl'
 import { Link } from 'react-router-dom'
+import Example from '../components/Addcomments'
 
 function Cource() {
   
@@ -34,13 +35,13 @@ function Cource() {
 
   useEffect(()=>{
      getAllClass()
-  },[searchKey])
+  },[searchKey]) 
 
   useEffect(()=>{
     if(sessionStorage.getItem("token")){
       setIsToken(true)
     }
-  })
+  },[])
   return (
     <>
     <Header/>
@@ -68,8 +69,11 @@ function Cource() {
                      {item.agelimit}
                     </Card.Text>youtube link
                     <a style={{ color: "red" }} href={item.link} target='_blank'><i class="fa-solid fa-link ms-2"> </i></a>
+                    <Button className='ms-5 bg-primary' ><Link to={'/review'} style={{textDecoration:"none"}}>reviews</Link></Button>
                   </Card.Body>
+                  <Example/>
                 </Card>
+             
              </div>
            </Col>
             )):<div>

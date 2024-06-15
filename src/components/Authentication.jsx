@@ -12,7 +12,7 @@ function Authentication({ register }) {
     password: "",
     phonenumber: ""
   })
-  
+
   const navigate = useNavigate()
 
   const registerform = register ? true : false
@@ -28,7 +28,7 @@ function Authentication({ register }) {
         title: "🚫",
         icon: "info",
         text: "Please fill the form completely"
-    });
+      });
     }
     else {
       const result = await userRegisterAPI(userData)
@@ -38,8 +38,8 @@ function Authentication({ register }) {
           title: "✅",
           icon: "success",
           text: `${result.data.username} is successfully registered`
-      });
-      
+        });
+
         setUserData({
           username: "",
           email: "",
@@ -52,65 +52,63 @@ function Authentication({ register }) {
       else {
         alert(result.response.data)
       }
-    } 
+    }
   }
 
   //login
 
-  const handleLogin = async (e) =>{
+  const handleLogin = async (e) => {
     e.preventDefault()
 
-    const{email,password}= userData
+    const { email, password } = userData
 
-    if(!email || !password){
+    if (!email || !password) {
       Swal.fire({
         title: "🚫",
         icon: "info",
         text: "Plese fill the form"
-    });
+      });
     }
-    else{
+    else {
       const result = await userLoginAPI(userData)
       console.log(result);
 
-      if(result.status === 200){
+      if (result.status === 200) {
         Swal.fire({
           title: "✅",
           icon: "success",
           text: "login successfull"
-      });
+        });
         //store data
-         sessionStorage.setItem("exitstingUser",JSON.stringify(result.data.exitstingUser))
-         sessionStorage.setItem("token",result.data.token)
+        sessionStorage.setItem("exitstingUser", JSON.stringify(result.data.exitstingUser))
+        sessionStorage.setItem("token", result.data.token)
 
         //state empty
-        setUserData({       
+        setUserData({
           email: "",
           password: "",
         })
         navigate('/')
 
       }
-      else{
+      else {
         Swal.fire({
           title: "🚫",
           icon: "info",
           text: (result.response.data)
-      });
+        });
       }
     }
   }
 
   return (
     <>
-
-<div id='bg' style={{ width: "100%", height: "100vh", backgroundColor: "ButtonFace" }} className='d-flex justify-content-center align-items-center'>
+      <div id='bg' style={{ width: "100%", height: "100vh", backgroundColor: "ButtonFace" }} className='d-flex justify-content-center align-items-center'>
         <div className="container-fluid w-50">
           <h1 className='d-flex justify-content-center align-items-center' data-aos="fade-up">User Authentication</h1>
           <Link className='d-flex justify-content-center align-items-center' to={'/'} style={{ textDecoration: "none" }} data-aos="fade-up" >/Home</Link>
-          <div className=" shadow  p-5 ">
-            <Row >
-
+          <div className="shadow  p-5 ">
+            <Row>
               <Col>
                 <div className="row align-items-center shadow rounded" data-aos="fade-up">
                   <div className="col-lg-6">
@@ -132,6 +130,7 @@ function Authentication({ register }) {
                           <Form.Group className="mb-3" controlId="formBasicEmail">
 
                             <Form.Control type="text" placeholder="Enter username" value={userData.username} onChange={(e) => setUserData({ ...userData, username: e.target.value })} />
+
 
                           </Form.Group>}
 
@@ -172,7 +171,8 @@ function Authentication({ register }) {
                           </div>}
                     </div>
                   </div>
-                </div></Col>
+                </div>
+              </Col>
             </Row>
           </div>
         </div>
